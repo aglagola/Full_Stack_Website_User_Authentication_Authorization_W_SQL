@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/default.aspx" title="Home"  description="">
+      <siteMapNode url="~/REGCUST/CustomerMain.aspx" title="Customer"  description="" >
+        <siteMapNode url="~/REGCUST/News.aspx" title="News"  description="" />
+        <siteMapNode url="~/REGCUST/Distance.aspx" title="Distance"  description="" />
+      </siteMapNode>
+      
+      
+      <siteMapNode url="~/DM/DataMain.aspx" title="Data Manager"  description="" >
+        <siteMapNode url="~/DM/News.aspx" title="News"  description="" />
+        <siteMapNode url="~/DM/Distance.aspx" title="Distance"  description="" />
+        <siteMapNode url="~/DM/DataMaintenance.aspx" title="Data Maintenance"  description="" />
+      </siteMapNode>
+
+
+      <siteMapNode url="~/SA/SystemMain.aspx" title="System Manager"  description="" >
+        <siteMapNode url="~/SA/News.aspx" title="News"  description="" />
+        <siteMapNode url="~/SA/Distance.aspx" title="Distance"  description="" />
+        <siteMapNode url="~/SA/SiteMaintenance.aspx" title="System Maintenance"  description="" />
+      </siteMapNode>
+    
+     
+    </siteMapNode>
+</siteMap>

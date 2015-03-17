@@ -1,0 +1,67 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="Site.Master.vb" Inherits="Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    Distance-Matic
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                <asp:Image ID="Image1" runat="server" DescriptionUrl="~/Images/calculator50 (1).gif" Height="157px" ImageUrl="~/Images/calculator50 (1).gif" Width="232px" />
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" DataSourceID="SiteMapDataSource1" StaticDisplayLevels="2">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home"/>
+                        <asp:MenuItem Text="Registered Users" Value="Registered Users">
+                            <asp:MenuItem NavigateUrl="~/REGCUST/News.aspx" Text="Customers" 
+                                Value="Everyone"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/DM/DataMaintenance.aspx" Text="Data Manager" 
+                                Value="Patients"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/SA/SiteMaintenance.aspx" Text="System Administrator" 
+                                Value="Physician"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/REGCUST/Distance.aspx" Text="Distance"/>
+                    </Items>
+                </asp:Menu>
+                <br />
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                </asp:SiteMapPath>
+                <br />
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="footer">        
+        Copyright ©2013
+        </div>
+        <div class="clear">
+        </div>
+
+    </div>
+
+    </form>
+</body>
+</html>
